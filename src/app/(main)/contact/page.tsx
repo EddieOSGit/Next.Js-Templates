@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ContactPage() {
   return (
-    <div className="container py-12 md:py-20">
+    <div className="py-12 md:py-20">
       <div className="mx-auto max-w-5xl space-y-8">
         <div className="space-y-4 text-center">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">Get in Touch</h1>

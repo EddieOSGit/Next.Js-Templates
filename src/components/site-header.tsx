@@ -6,13 +6,14 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { mainNavItems } from "@/lib/nav";
 import { Button } from "@/components/ui/button";
+import { CenteredContainer } from "@/components/ui/centered-container";
 
 export function SiteHeader() {
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between py-4">
+      <CenteredContainer className="flex h-16 items-center justify-between py-4">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-2xl inline-block text-brand-700">
@@ -45,7 +46,7 @@ export function SiteHeader() {
             </Link>
           </Button>
         </div>
-      </div>
+      </CenteredContainer>
     </header>
   );
 } 

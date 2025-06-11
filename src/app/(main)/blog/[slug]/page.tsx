@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         }}
       />
       
-      <div className="container py-12 md:py-20">
+      <div className="py-12 md:py-20">
         <article className="prose prose-stone dark:prose-invert mx-auto max-w-4xl">
           <div className="mb-8 text-center">
             <h1 className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl">
