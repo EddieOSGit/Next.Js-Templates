@@ -21,7 +21,11 @@ export default function MainLayout({ children }: MainLayoutProps) {
         )}
       >
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <div className="container mx-auto px-4">
+            {children}
+          </div>
+        </main>
         <SiteFooter />
         <Toaster />
       </div>
