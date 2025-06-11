@@ -4,7 +4,7 @@
   "description": "Create a new Next.js business website from template",
   "type": "module",
   "bin": {
-    "create-business-template": "dist/cli.js"
+    "create-business-template": "dist/src/cli.js"
   },
   "files": [
     "dist"
