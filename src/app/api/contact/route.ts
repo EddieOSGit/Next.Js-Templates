@@ -5,7 +5,7 @@ import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validations/contact";
 
 // Initialize Resend for email
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || "dummy-key-for-build");
 
 // Initialize Redis and rate limiter
 // 5 requests per hour
@@ -22,6 +22,14 @@ const ratelimit = new Ratelimit({
 
 export async function POST(req: NextRequest) {
   try {
+    // Check if required environment variables are set
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 503 }
+      );
+    }
+
     // Get the client IP for rate limiting
     const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";
     

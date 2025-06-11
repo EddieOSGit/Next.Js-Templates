@@ -6,9 +6,9 @@ import { getPostBySlug } from "@/lib/mdx";
 import { CalendarIcon, User } from "lucide-react";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 interface Post {
@@ -23,7 +23,8 @@ interface Post {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -110,14 +111,15 @@ function generateArticleJsonLd(post: Post, slug: string) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   
   if (!post) {
     notFound();
   }
 
-  const breadcrumbJsonLd = generateBreadcrumbJsonLd(post, params.slug);
-  const articleJsonLd = generateArticleJsonLd(post, params.slug);
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd(post, slug);
+  const articleJsonLd = generateArticleJsonLd(post, slug);
   
   return (
     <>
