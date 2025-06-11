@@ -1,9 +1,7 @@
 import { Metadata } from "next";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us | Business Template",
@@ -53,39 +51,7 @@ export default function ContactPage() {
             </CardContent>
           </Card>
           
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="name">
-                Name
-              </label>
-              <Input id="name" placeholder="Your name" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="email">
-                Email
-              </label>
-              <Input id="email" type="email" placeholder="Your email" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="subject">
-                Subject
-              </label>
-              <Input id="subject" placeholder="How can we help?" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="message">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Your message"
-                className="min-h-[150px] resize-none"
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              Send Message
-            </Button>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </div>
