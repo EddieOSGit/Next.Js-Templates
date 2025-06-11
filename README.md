@@ -14,6 +14,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - ✅ JSON-LD Structured Data
 - ✅ Analytics Integration (Vercel & Plausible)
 - ✅ Responsive Design
+- ✅ Jest & React Testing Library
+- ✅ GitHub Actions CI/CD
+- ✅ Deployment Ready (Vercel, Netlify)
 
 ## Getting Started
 
@@ -30,6 +33,94 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+### Required Environment Variables
+
+```bash
+# Contact Form Email Service (Resend)
+RESEND_API_KEY=re_xxxxxxxxxx
+
+# Contact Form Recipient
+CONTACT_EMAIL=contact@yourdomain.com
+
+# Rate Limiting (Upstash Redis)
+UPSTASH_REDIS_REST_URL=https://xxxxxx.upstash.io
+UPSTASH_REDIS_REST_TOKEN=xxxxxxxxxx
+
+# Application URL
+NEXT_PUBLIC_APP_URL=https://yourdomain.com
+```
+
+### Optional Environment Variables
+
+```bash
+# Analytics
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourdomain.com
+
+# Vercel Analytics (automatically enabled on Vercel)
+# No configuration needed
+
+# Development/Testing
+NODE_ENV=development
+```
+
+### Environment Variables by Service
+
+#### Resend (Email Service)
+- `RESEND_API_KEY` - API key from [resend.com](https://resend.com)
+- `CONTACT_EMAIL` - Email address to receive contact form submissions
+
+#### Upstash Redis (Rate Limiting)
+- `UPSTASH_REDIS_REST_URL` - Redis database URL from [upstash.com](https://upstash.com)
+- `UPSTASH_REDIS_REST_TOKEN` - Redis authentication token
+
+#### Analytics
+- `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` - Your domain for Plausible Analytics (optional)
+
+#### Application
+- `NEXT_PUBLIC_APP_URL` - Your application's public URL (used for SEO and API calls)
+
+## Deployment
+
+### Deploy to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/next-js-business-template)
+
+1. Click the button above or import your repository to Vercel
+2. Configure environment variables in Vercel dashboard
+3. Deploy
+
+The `vercel.json` configuration includes:
+- Clean URLs (removes .html extensions)
+- Security headers
+- Optimized caching for static assets
+
+### Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/next-js-business-template)
+
+1. Click the button above or import your repository to Netlify
+2. Configure environment variables in Netlify dashboard
+3. Deploy
+
+The `netlify.toml` configuration includes:
+- Build settings optimized for Next.js
+- Security headers
+- Optimized caching for static assets
+- Next.js plugin for enhanced support
+
+### Manual Deployment
+
+For other platforms, build the project and deploy the `.next` directory:
+
+```bash
+npm run build
+# Deploy the .next directory to your hosting platform
+```
 
 ## SEO & Analytics Setup
 
@@ -65,26 +156,6 @@ NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourdomain.com
 
 The contact form is fully implemented with email sending and rate limiting. To enable it, you need to set up the following environment variables:
 
-### Required Environment Variables
-
-Create a `.env.local` file in the root directory with:
-
-```bash
-# Contact Form Configuration
-RESEND_API_KEY=your_resend_api_key_here
-CONTACT_EMAIL=contact@yourdomain.com
-
-# Rate Limiting (Upstash Redis)
-UPSTASH_REDIS_REST_URL=your_upstash_redis_url_here
-UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_token_here
-
-# App Configuration
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-
-# Analytics (Optional)
-NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourdomain.com
-```
-
 ### Setup Instructions
 
 1. **Resend (Email Service)**
@@ -118,6 +189,31 @@ NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourdomain.com
 - ✅ Toast notifications for user feedback
 - ✅ Server-side form processing
 - ✅ Error handling and user-friendly messages
+
+## Testing
+
+Run the test suite:
+
+```bash
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage
 
 ## Learn More
 
