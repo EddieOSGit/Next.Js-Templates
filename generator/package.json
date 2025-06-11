@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "build": "swc src -d dist",
-    "dev": "swc src -d dist --watch"
+    "dev": "swc src -d dist --watch",
+    "watch": "swc src -d dist --watch"
   },
   "dependencies": {
     "arg": "^5.0.2",

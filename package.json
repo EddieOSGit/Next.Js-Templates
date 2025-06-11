@@ -4,7 +4,7 @@
   "private": true,
   "workspaces": ["generator"],
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "build:generator": "npm run build --workspace generator",
     "start": "next start",
