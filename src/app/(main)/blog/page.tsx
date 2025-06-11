@@ -3,10 +3,18 @@ import Link from "next/link";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarIcon } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Blog | Business Template",
-  description: "Latest insights, trends, and tips for your business growth.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Blog",
+    description: "Latest insights, trends, and tips for your business growth. Discover strategies, workplace trends, marketing tips, and technology insights.",
+    keywords: ["business blog", "business insights", "marketing tips", "workplace trends", "business strategy", "technology"],
+    openGraph: {
+      title: "Our Blog - Business Insights & Strategies",
+      description: "Latest insights, trends, and tips for your business growth.",
+      type: "website",
+    },
+  };
+}
 
 // Placeholder blog data
 const blogPosts = [

@@ -3,10 +3,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Mail, Phone, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Business Template",
-  description: "Get in touch with our team. We're here to help with any questions you have.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Contact Us",
+    description: "Get in touch with our team. We're here to help with any questions you have about our services and solutions.",
+    keywords: ["contact", "get in touch", "support", "business inquiries", "customer service"],
+    openGraph: {
+      title: "Contact Us - Get in Touch",
+      description: "Get in touch with our team. We're here to help with any questions you have.",
+      type: "website",
+    },
+  };
+}
 
 export default function ContactPage() {
   return (

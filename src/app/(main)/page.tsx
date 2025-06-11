@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -7,6 +8,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Lightbulb, BarChart, Users, Zap } from "lucide-react";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Home",
+    description: "Transform your business with our comprehensive platform. Streamline operations, boost productivity, and drive growth with smart insights and team collaboration tools.",
+    keywords: ["business platform", "productivity", "analytics", "team collaboration", "business growth"],
+    openGraph: {
+      title: "Transform Your Business with Our Solution",
+      description: "Streamline operations, boost productivity, and drive growth with our comprehensive business platform.",
+      type: "website",
+    },
+  };
+}
 
 export default function HomePage() {
   return (

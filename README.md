@@ -10,7 +10,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - ✅ MDX Blog with gray-matter
 - ✅ Contact Form with Email & Rate Limiting
 - ✅ Toast Notifications
-- ✅ SEO Optimized
+- ✅ SEO Optimized with next-seo
+- ✅ JSON-LD Structured Data
+- ✅ Analytics Integration (Vercel & Plausible)
 - ✅ Responsive Design
 
 ## Getting Started
@@ -28,6 +30,36 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## SEO & Analytics Setup
+
+### SEO Configuration
+
+The template includes comprehensive SEO optimization:
+
+- **next-seo** for default SEO configuration
+- **generateMetadata()** functions on all pages
+- **JSON-LD structured data** for blog posts with breadcrumbs
+- **Open Graph** and **Twitter Card** meta tags
+- **Optimized meta descriptions** and keywords
+
+### Analytics Integration
+
+The template supports both Vercel Analytics and Plausible:
+
+```bash
+# Optional: For Plausible Analytics
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourdomain.com
+```
+
+### SEO Features
+
+- ✅ Automatic sitemap generation
+- ✅ Structured data for articles
+- ✅ Breadcrumb navigation (JSON-LD)
+- ✅ Social media optimization
+- ✅ Search engine friendly URLs
+- ✅ Meta tags optimization
 
 ## Contact Form Setup
 
@@ -48,6 +80,9 @@ UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_token_here
 
 # App Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Analytics (Optional)
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN=yourdomain.com
 ```
 
 ### Setup Instructions
@@ -70,6 +105,10 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 4. **App URL**
    - For development: `http://localhost:3000`
    - For production: your actual domain
+
+5. **Analytics (Optional)**
+   - **Vercel Analytics**: Automatically enabled when deployed to Vercel
+   - **Plausible**: Set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` to your domain
 
 ### Contact Form Features
 

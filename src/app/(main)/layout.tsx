@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Providers } from "@/components/providers";
+import { Toaster } from "@/components/ui/toaster";
 import { inter, playfair } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +23,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <Toaster />
       </div>
     </Providers>
   );

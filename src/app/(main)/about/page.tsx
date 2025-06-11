@@ -1,9 +1,17 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "About Us | Business Template",
-  description: "Learn more about our company, our mission, and our team.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "About Us",
+    description: "Learn more about our company, our mission, and our team. We're on a mission to help businesses succeed in the digital age with powerful, accessible tools.",
+    keywords: ["about us", "company mission", "business values", "team", "company story"],
+    openGraph: {
+      title: "About Us - Our Mission & Values",
+      description: "Learn more about our company, our mission, and our team. We're on a mission to help businesses succeed in the digital age.",
+      type: "website",
+    },
+  };
+}
 
 export default function AboutPage() {
   return (

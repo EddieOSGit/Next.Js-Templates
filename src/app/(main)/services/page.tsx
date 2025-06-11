@@ -2,10 +2,18 @@ import { Metadata } from "next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Services | Business Template",
-  description: "Explore our range of services designed to help your business grow.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Services",
+    description: "Explore our comprehensive range of services designed to help your business grow. From business consulting to digital marketing, software solutions, and data analytics.",
+    keywords: ["business consulting", "digital marketing", "software solutions", "data analytics", "cloud solutions", "customer support"],
+    openGraph: {
+      title: "Our Services - Comprehensive Business Solutions",
+      description: "Explore our range of services designed to help your business grow and succeed in the digital age.",
+      type: "website",
+    },
+  };
+}
 
 export default function ServicesPage() {
   return (
