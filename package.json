@@ -41,6 +41,9 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@netlify/plugin-nextjs": "^5.0.0",
+    "@stackbit/cms-git": "^1.0.35",
+    "@stackbit/types": "^2.1.14",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -57,8 +60,7 @@
     "ts-jest": "^29.3.4",
     "ts-node": "^10.9.2",
     "tw-animate-css": "^1.3.4",
-    "typescript": "^5",
-    "@netlify/plugin-nextjs": "^5.0.0"
+    "typescript": "^5"
   },
   "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
 }
