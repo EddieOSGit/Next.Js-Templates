@@ -1,6 +1,7 @@
 {
   "name": "create-business-template",
   "version": "1.0.0",
+  "private": true,
   "description": "Create a new Next.js business website from template",
   "type": "module",
   "bin": {
@@ -10,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "swc src -d dist",
+    "build": "swc src -d dist --minify",
     "dev": "swc src -d dist --watch",
     "watch": "swc src -d dist --watch"
   },
