@@ -1,5 +1,5 @@
 {
-  "name": "tmp",
+  "name": "business-template",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:generator": "npm run build --workspace generator",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
