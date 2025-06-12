@@ -4,10 +4,12 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  PNPM_VERSION = "9"
+  NPM_FLAGS    = "--version"
 
 [dev]
   framework = "next"
-  command = "npm run dev"
+  command = "pnpm dev"
   port = 3000
 
 [[plugins]]
