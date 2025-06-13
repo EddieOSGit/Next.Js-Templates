@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const articleJsonLd = generateArticleJsonLd(post, slug);
   
   return (
-    <>
+    <div data-sb-object-id={`post-${slug}`}>
       <Script
         id="breadcrumb-jsonld"
         type="application/ld+json"
@@ -141,30 +141,38 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="py-12 md:py-20">
         <article className="prose prose-stone dark:prose-invert mx-auto max-w-4xl">
           <div className="mb-8 text-center">
-            <h1 className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl">
+            {/* eslint-disable-next-line react/forbid-dom-props */}
+            <h1 data-sb-field-path="title" className="mb-2 text-4xl font-bold tracking-tight sm:text-5xl">
               {post.title}
             </h1>
-            <p className="text-xl text-muted-foreground">{post.description}</p>
+            {/* eslint-disable-next-line react/forbid-dom-props */}
+            <p data-sb-field-path="description" className="text-xl text-muted-foreground">{post.description}</p>
             <div className="mt-4 flex items-center justify-center gap-x-4 text-sm text-muted-foreground">
               <div className="flex items-center gap-1">
                 <User className="h-4 w-4" />
-                <span>{post.author}</span>
+                {/* eslint-disable-next-line react/forbid-dom-props */}
+                <span data-sb-field-path="author">{post.author}</span>
               </div>
               <div className="flex items-center gap-1">
                 <CalendarIcon className="h-4 w-4" />
-                <time dateTime={post.date}>
+                {/* eslint-disable-next-line react/forbid-dom-props */}
+                <time data-sb-field-path="date" dateTime={post.date}>
                   {format(new Date(post.date), "MMMM d, yyyy")}
                 </time>
               </div>
-              <span>{post.category}</span>
+              {/* eslint-disable-next-line react/forbid-dom-props */}
+              <span data-sb-field-path="category">{post.category}</span>
             </div>
           </div>
           
           <div className="mdx">
-            {post.content.content}
+            {/* eslint-disable-next-line react/forbid-dom-props */}
+            <div data-sb-field-path="content">
+              {post.content.content}
+            </div>
           </div>
         </article>
       </div>
-    </>
+    </div>
   );
 } 
