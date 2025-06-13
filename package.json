@@ -8,8 +8,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:prod": "NODE_ENV=production pnpm build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write .",
+    "clean": "rimraf .next out",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
